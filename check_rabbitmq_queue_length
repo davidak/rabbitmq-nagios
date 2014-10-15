@@ -37,7 +37,7 @@ def check_line(line):
     queue, length = line.split("\t")
     length = int(length)
     globals()['output'] += "%s: %s; " % (queue, length)
-    globals()['perf'] += "length=%sITEMS;%s;%s;; " % (length, WARN, CRIT)
+    globals()['perf'] += "%s=%s;%s;%s;; " % (queue, length, WARN, CRIT)
     if length > CRIT:
         globals()['is_crit'] = True
     if length > WARN:
